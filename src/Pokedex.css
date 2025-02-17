@@ -1,0 +1,220 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #c0d8ba;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: auto;
+  }
+  html{
+    scroll-behavior: smooth;
+  }
+  
+  .container {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 50px auto;
+    width: 90%;
+    max-width: 1600px;
+    text-align: center;
+    overflow: visible;
+  }
+  
+  header {
+    margin-bottom: 20px;
+  }
+  
+  .search-bar {
+    padding: 10px;
+    width: calc(100% - 120px);
+    border: 1px solid #ddd;
+    border-bottom: 3px solid red;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-right: 4px;
+    display: inline-block;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    display: inline-block;
+  }
+  
+  button:hover {
+    background-color: #e03e00;
+  }
+  
+  .suggestions {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .suggestions li {
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s;
+  }
+  
+  .suggestions li:hover {
+    background-color: #f5f5f5;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: xx-large;
+    text-transform: capitalize;
+    transition: all 500ms ease;
+  }
+  
+  .title {
+    text-align: center;
+    font-size: xx-large;
+    text-transform: capitalize;
+    transition: all 500ms ease;
+  }
+  
+  .title:hover {
+    transform: scale(1.01);
+    letter-spacing: 1.4rem;
+    text-shadow: -5px -10px 5px rgba(0, 0, 0, 0.329);
+  }
+  
+  .card {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  
+  .pokemon-card {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(rgb(248, 237, 237) 59%, #e03e00 50%);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.434);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.5s ease;
+  }
+  
+  .pokemon-card:hover {
+    transform: scale(1.04);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.881);
+    background: linear-gradient(#e03e00 59%, rgb(248, 237, 237) 50%);
+  }
+  
+  .pokeimg {
+    width: 150px;
+    height: 150px;
+    object-fit: fill;
+    margin: 0 auto;
+  }
+  
+  .pokemon-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+    font-size: 1.2em;
+  }
+  
+  .pokemon-info span {
+    font-size: 1em;
+    color: #ffffff;
+    font-weight: 500;
+    text-transform: capitalize;
+    transition: color 0.5s ease;
+  }
+  
+  .pokemon-card:hover .pokemon-info span {
+    color: rgb(255, 3, 3);
+    font-weight: 600;
+  }
+  
+  .pokemon-type {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 1.3em;
+    border-radius: 40px;
+    color: #ddd;
+    text-transform: capitalize;
+    background-color: rgb(21, 156, 21);
+  }
+  
+  .grid-three-cols {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  
+  @media (max-width: 1200px) {
+    .card {
+      grid-template-columns: repeat(3, 1fr); 
+    }
+  
+    .search-bar {
+      width: calc(100% - 80px); 
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .card {
+      grid-template-columns: repeat(2, 1fr); 
+    }
+  
+    h1, .title {
+      font-size: x-large; 
+    }
+  
+    .search-bar {
+      width: calc(100% - 60px); 
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .card {
+      grid-template-columns: 1fr;
+    }
+  
+    h1, .title {
+      font-size: x-large; 
+    }
+  
+    button {
+      width: 100%; 
+      padding: 15px;
+    }
+  
+    .search-bar {
+      width: 90%;
+      margin-bottom: 10px;
+    }
+  }
+  
