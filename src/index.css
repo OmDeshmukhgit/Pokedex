@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  background: linear-gradient(100deg, #e6fae9 0%, #c0f5ec 100%);
+}
+#root {
+  min-height: 100vh;
+}
+
