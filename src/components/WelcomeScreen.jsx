@@ -52,7 +52,7 @@ function WelcomeScreen({ onSearchClick }) {
             fontSize: { xs: '2.5rem', md: '3.5rem' }
           }}
         >
-          Gotta Search &apos;Em All!!!
+          Gotta Search them all &apos;Em All!!!
         </Typography>
 
         {/* Subtext with Glassmorphism */}
