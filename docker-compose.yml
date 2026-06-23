@@ -1,5 +1,5 @@
 services:
   webapp:
-    build: ${DOCKER_USER}/pokedex:1.0
+    build: orionpax217/pokedex:1.0
     ports:
     - 84:80
