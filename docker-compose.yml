@@ -1,5 +1,5 @@
 services:
   webapp:
-    build: .
+    build: ${DOCKER_USER}/pokedex:1.0
     ports:
     - 84:80
