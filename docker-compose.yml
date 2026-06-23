@@ -1,5 +1,5 @@
 services:
   webapp:
-    build: orionpax217/pokedex:latest
+    image: orionpax217/pokedex:latest
     ports:
     - 84:80
