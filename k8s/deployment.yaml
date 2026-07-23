@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Pokedex_deployment
+  labels:
+    app: Pokedex
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: Pokedex
+      tier: development
+  template:
+    metadata:
+      labels:
+        app: Pokedex
+        tier: development
+    spec:
+      containers:
+      - name: Pokedex
+        image: ${DOCKER_USER}/pokedex:1.0
+        ports:
+        - containerPort: 80
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: pokedex-deployment
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: pokedex
+      tier: development
+
+  template:
+    metadata:
+      labels:
+        app: pokedex
+        tier: development
+
+    spec:
+      containers:
+      - name: pokedex
+        image: ${DOCKER_USER}/pokedex:${IMAGE_TAG}
+        ports:
+        - containerPort: 80
