@@ -3,7 +3,7 @@ kind: Deployment
 
 metadata:
   name: pokedex-deployment
-  namespace: development
+  namespace: dev
   labels:
     app: pokedex
     tier: frontend

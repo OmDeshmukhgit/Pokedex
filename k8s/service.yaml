@@ -3,6 +3,7 @@ kind: Service
 
 metadata:
   name: pokedex-service
+  namespace: dev
 
 spec:
   type: NodePort
@@ -12,7 +13,7 @@ spec:
     tier: development
 
   ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 80
-    nodePort: 30084
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 30084
