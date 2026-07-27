@@ -3,24 +3,60 @@ kind: Deployment
 
 metadata:
   name: pokedex-deployment
+  namespace: development
+  labels:
+    app: pokedex
+    tier: frontend
 
 spec:
   replicas: 2
 
+  revisionHistoryLimit: 5
+
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+
   selector:
     matchLabels:
       app: pokedex
-      tier: development
+      tier: frontend
 
   template:
     metadata:
       labels:
         app: pokedex
-        tier: development
+        tier: frontend
 
     spec:
       containers:
       - name: pokedex
         image: ${DOCKER_USER}/pokedex:${IMAGE_TAG}
+        imagePullPolicy: Always
+
         ports:
         - containerPort: 80
+
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
+
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 15
+          periodSeconds: 10
+
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 5
