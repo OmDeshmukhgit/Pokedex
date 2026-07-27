@@ -10,7 +10,7 @@ spec:
 
   selector:
     app: pokedex
-    tier: development
+    tier: frontend
 
   ports:
     - protocol: TCP
